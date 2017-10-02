@@ -1,0 +1,23 @@
+#pragma once
+
+#include <blkBlock.hpp>
+
+namespace blk {
+  Expr move_ref(Expr subBlock, int new_wr, int new_hr);
+  
+  class MoveRef : public Block {
+  private:
+    Expr subBlock_;
+
+    MoveRef(Expr subBlock, int new_wr, int new_h);
+
+  public:
+
+    MoveRef()                            = delete;
+    MoveRef(const Debug& cpy)            = delete;
+    MoveRef(Debug&& cpy)                 = delete;
+    MoveRef& operator=(const Debug& cpy) = delete;
+    MoveRef& operator=(Debug&& cpy)      = delete;
+    virtual ~Debug() {}
+  }
+}

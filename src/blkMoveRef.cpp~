@@ -1,0 +1,13 @@
+#include <blkMoveRef.hpp>
+
+blk::Expr blk::move_ref(blk::Expr subBlock, int new_wr, int new_h) {
+  return Expr(new MoveRef(blk::Expr subBlock, int new_wr, int new_h));
+}
+
+blk::MoveRef::MoveRef(blk::Expr subBlock, int new_wr, int new_h)
+  : Block(subBlock.getWidth(), subBlock.getHeight(), new_wr, new_hr),
+    subBlock_(subBlock) {}
+
+void blk::Debug::printInBoundsLine(std::ostream& os, int i) const {
+  subBlock_.printInBoundsLine(os, i);
+}

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/blk.hpp
+blkBlock.hpp
+-
+blkDebug.hpp
+-
+
+../src/blkBlock.hpp
+iostream
+-
+memory
+-
+
+../src/blkDebug.hpp
+blkBlock.hpp
+-
+
+/usr/users/promo2018/ferreiramora_ped/Documents/blocks/examples/example-debug.cpp
+blk.hpp
+-
+iostream
+-
+
