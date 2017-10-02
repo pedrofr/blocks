@@ -1,0 +1,6 @@
+#include <blkOver.hpp>
+
+blk::Expr blk::over(blk::Expr above, blk::Expr under) {
+  return Expr(new Over(above, under));
+}
+

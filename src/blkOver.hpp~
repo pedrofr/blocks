@@ -1,0 +1,20 @@
+#pragma once
+
+#include <blkBlock.hpp>
+
+namespace blk {
+
+
+  Expr over(Expr above, Expr under);
+
+  class Over : public Block {
+  private:
+    Expr above_;
+    Expr under_;
+
+    friend Expr over(Expr above, Expr under);
+
+    Over(Expr above, Expr under);
+  };
+  
+}
