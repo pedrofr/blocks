@@ -16,5 +16,5 @@ void blk::MoveRef::printInBoundsLine(std::ostream& os, int i) const {
   //  std::cout <<
   //  getRefWidth() << std::endl <<
   //  getRefHeight() << std::endl;
-  Block::call_printInBoundsLine(subBlock_, os, i);
+  Block::call_printInBoundsLine(subBlock_, os, i + getRefHeight() - subBlock_->getRefHeight());
 }
