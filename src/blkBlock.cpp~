@@ -37,7 +37,3 @@ std::ostream& blk::operator<<(std::ostream& os,
     os << "null";
   return os;
 }
-
-void blk::Block::call_printInBoundsLine(Expr block, std::ostream& os, int i) {
-  block->printInBoundsLine(os, i);
-}

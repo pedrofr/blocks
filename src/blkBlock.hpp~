@@ -59,6 +59,6 @@ namespace blk {
     int getHeight()    const {return height;    }
     int getRefWidth()  const {return ref_width; }
     int getRefHeight() const {return ref_height;}
-    
+
   };
 }

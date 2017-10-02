@@ -13,7 +13,7 @@ namespace blk {
 
     friend Expr move_ref(Expr subBlock, int new_wr, int new_hr);
 
-    MoveRef(Expr subBlock, int new_wr, int new_h);
+    MoveRef(Expr subBlock, int new_wr, int new_hr);
 
   public:
 

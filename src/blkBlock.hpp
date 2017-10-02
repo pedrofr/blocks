@@ -47,6 +47,8 @@ namespace blk {
     // Prints a line of the block (0 is the line of the reference
     // point).
     void printLine(std::ostream& os, int i) const;
+
+    static void call_printInBoundsLine(Expr block, std::ostream& os, int i);
     
   public:
 
@@ -59,6 +61,6 @@ namespace blk {
     int getHeight()    const {return height;    }
     int getRefWidth()  const {return ref_width; }
     int getRefHeight() const {return ref_height;}
-
+    
   };
 }

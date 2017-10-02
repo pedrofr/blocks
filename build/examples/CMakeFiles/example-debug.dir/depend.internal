@@ -5,4 +5,5 @@ examples/CMakeFiles/example-debug.dir/example-debug.cpp.o
  ../src/blk.hpp
  ../src/blkBlock.hpp
  ../src/blkDebug.hpp
+ ../src/blkMoveRef.hpp
  /usr/users/promo2018/ferreiramora_ped/Documents/blocks/examples/example-debug.cpp

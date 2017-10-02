@@ -1,8 +1,6 @@
 #include <blkDebug.hpp>
 #include <string>
 
-
-
 blk::Expr blk::debug(char symb,
 		     int width, int height,
 		     int ref_width, int ref_height) {

@@ -11,6 +11,8 @@ blkBlock.hpp
 -
 blkDebug.hpp
 -
+blkMoveRef.hpp
+-
 
 ../src/blkBlock.hpp
 iostream
@@ -19,6 +21,10 @@ memory
 -
 
 ../src/blkDebug.hpp
+blkBlock.hpp
+-
+
+../src/blkMoveRef.hpp
 blkBlock.hpp
 -
 
