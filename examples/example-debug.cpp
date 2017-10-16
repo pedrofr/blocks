@@ -17,7 +17,8 @@ int main(int argc, char* argv[]) {
 	    << e2 << std::endl
 	    << o <<  std::endl;
 
-   std::cout << blk::over(blk::move_ref(e1,1,3),e2) << std::endl
+  std::cout << blk::beside(e1,e2) << std::endl
+	    << blk::over(blk::move_ref(e1,1,3),e2) << std::endl
 	    << std::endl;
    
   return 0;

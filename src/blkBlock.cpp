@@ -41,3 +41,7 @@ std::ostream& blk::operator<<(std::ostream& os,
 void blk::Block::call_printInBoundsLine(Expr block, std::ostream& os, int i) {
   block->printInBoundsLine(os, i);
 }
+
+void blk::Block::call_printLine(Expr block, std::ostream& os, int i) {
+  block->printLine(os, i);
+}

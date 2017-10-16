@@ -49,6 +49,7 @@ namespace blk {
     void printLine(std::ostream& os, int i) const;
 
     static void call_printInBoundsLine(Expr block, std::ostream& os, int i);
+    static void call_printLine(Expr block, std::ostream& os, int i);
     
   public:
 
