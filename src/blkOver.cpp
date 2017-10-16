@@ -1,23 +1,45 @@
 #include <blkOver.hpp>
 
-blk::Expr blk::over(blk::Expr above, blk::Expr under) {
-  int height = above->getHeight() + under->getHeight();
+blk::Expr blk::over(blk::Expr above, blk::Expr below) {
+  int height = above->getHeight() + below->getHeight();
   int ref_h = above->getRefHeight();
-  int ref_w = max(above->getRefWidth(), under->getRefWidth());
-  int width = ref_w + max(above->getWidth() - above->getRefWidth(), under->getWidth() - under->getRefWidth()) - 1;
+  int ref_w = std::max(above->getRefWidth(), below->getRefWidth());
+  int width = ref_w + std::max(above->getWidth() - above->getRefWidth(), below->getWidth() - below->getRefWidth()) - 1;
   
-  return Expr(new Over(above, under, widht, height, ref_w, ref_h));
+  return Expr(new Over(above, below, width, height, ref_w, ref_h));
 }
 
-blk::Over::Over(blk::Expr above, blk::Expr under, int width, iht height, int ref_w, int ref_h)
+blk::Over::Over(blk::Expr above, blk::Expr below, int width, int height, int ref_w, int ref_h)
   : Block(width, height, ref_w, ref_h),
     above_(above),
-    under_(under)
+    below_(below),
+    interface_line(above_->getHeight() - getRefHeight() - 1)
 {}
 
 void blk::Over::printInBoundsLine(std::ostream& os, int i) const {
   //    std::cout <<
   //    getRefWidth() << std::endl <<
   //    getRefHeight() << std::endl;
-  Block::call_printInBoundsLine(subBlock_, os, i);
+
+  if (i < interface_line) {
+    for (int j = 0; j < getRefWidth() - above_->getRefWidth() - 1; j++) {
+      os << blk::Block::fill;
+    }
+
+    Block::call_printInBoundsLine(above_, os, i);
+    
+    for (int j = getRefWidth() + (above_->getWidth() - above_->getRefWidth()); j < getWidth(); j++) {
+      os << blk::Block::fill;
+    }
+  } else {
+    for (int j = 0; j < getRefWidth() - below_->getRefWidth() - 1; j++) {
+      os << blk::Block::fill;
+    }
+
+    Block::call_printInBoundsLine(below_, os, i);
+    
+    for (int j = getRefWidth() + (below_->getWidth() - below_->getRefWidth()); j < getWidth(); j++) {
+      os << blk::Block::fill;
+    }    
+  }
 }

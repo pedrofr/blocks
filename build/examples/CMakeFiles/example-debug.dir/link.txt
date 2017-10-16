@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/example-debug.dir/example-debug.cpp.o  -o example-debug -rdynamic ../src/libblk.so -Wl,-rpath,/usr/users/promo2018/ferreiramora_ped/Documents/blocks/build/src 

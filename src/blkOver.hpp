@@ -5,16 +5,17 @@
 namespace blk {
 
 
-  Expr over(Expr above, Expr under);
+  Expr over(Expr above, Expr below);
 
   class Over : public Block {
   private:
     Expr above_;
-    Expr under_;
+    Expr below_;
+    int interface_line;
 
-    friend Expr over(Expr above, Expr under);
+    friend Expr over(Expr above, Expr below);
 
-    Over(Expr above, Expr under, int width, iht height, int ref_w, int ref_h);
+    Over(Expr above, Expr below, int width, int height, int ref_w, int ref_h);
 
   public:
     Over()                              = delete;

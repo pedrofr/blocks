@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libblk.so -o libblk.so CMakeFiles/blk.dir/blkBlock.cpp.o CMakeFiles/blk.dir/blkDebug.cpp.o CMakeFiles/blk.dir/blkMoveRef.cpp.o 
