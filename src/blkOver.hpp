@@ -18,7 +18,7 @@ namespace blk {
     Over(Expr above, Expr below, int width, int height, int ref_w, int ref_h);
 
   public:
-    Over()                              = delete;
+    Over()                           = delete;
     Over(const Over& cpy)            = delete;
     Over(Over&& cpy)                 = delete;
     Over& operator=(const Over& cpy) = delete;
