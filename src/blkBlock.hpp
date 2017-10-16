@@ -11,7 +11,12 @@ namespace blk {
   using Expr = std::shared_ptr<const Block>;
 
   std::ostream& operator<<(std::ostream& os, const blk::Expr& e);
-
+  blk::Expr operator+(const blk::Expr& e1, const blk::Expr& e2);
+  blk::Expr operator-(const blk::Expr& e1, const blk::Expr& e2);
+  blk::Expr operator*(const blk::Expr& e1, const blk::Expr& e2);
+  blk::Expr operator==(const blk::Expr& e1, const blk::Expr& e2);
+  blk::Expr operator/(const blk::Expr& e1, const blk::Expr& e2);
+  
   class Block {
   public:
     

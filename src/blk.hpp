@@ -5,3 +5,4 @@
 #include <blkMoveRef.hpp>
 #include <blkOver.hpp>
 #include <blkBeside.hpp>
+#include <blkText.hpp>

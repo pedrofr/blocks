@@ -1,4 +1,7 @@
 #include <blkBlock.hpp>
+#include <blkText.hpp>
+#include <blkBeside.hpp>
+#include <blkOver.hpp>
 #include <iomanip>
 
 char blk::Block::fill = '.';
@@ -36,6 +39,32 @@ std::ostream& blk::operator<<(std::ostream& os,
   else
     os << "null";
   return os;
+}
+
+blk::Expr blk::operator+(const blk::Expr& e1,
+			      const blk::Expr& e2) {
+  return blk::beside(blk::beside(e1,blk::text(" + ")),e2);
+}
+
+blk::Expr blk::operator-(const blk::Expr& e1,
+			      const blk::Expr& e2) {
+  return blk::beside(blk::beside(e1,blk::text(" - ")),e2);
+}
+
+blk::Expr blk::operator*(const blk::Expr& e1,
+			      const blk::Expr& e2) {
+  return blk::beside(blk::beside(e1,blk::text(" * ")),e2);
+}
+
+blk::Expr blk::operator==(const blk::Expr& e1,
+			      const blk::Expr& e2) {
+  return blk::beside(blk::beside(e1,blk::text(" = ")),e2);
+}
+
+blk::Expr blk::operator/(const blk::Expr& e1,
+			      const blk::Expr& e2) {
+  int width = std::max(e1->getWidth(),e2->getWidth());
+  return blk::over(blk::over(e1,blk::text(std::string(width,'-'))),e2);
 }
 
 void blk::Block::call_printInBoundsLine(Expr block, std::ostream& os, int i) {
